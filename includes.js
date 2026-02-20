@@ -8,6 +8,7 @@ async function includeHTML(selector, file) {
 }
 
 document.addEventListener("DOMContentLoaded", async () => {
-  await includeHTML("#site-header", "header.html");
-  await includeHTML("#site-footer", "footer.html");
+  await includeHTML("#site-header", "/header.html");
+  await includeHTML("#site-footer", "/footer.html");
+
 });
