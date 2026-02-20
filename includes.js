@@ -3,12 +3,11 @@ async function includeHTML(selector, file) {
   if (!el) return;
 
   const res = await fetch(file, { cache: "no-cache" });
-  const html = await res.text();
-  el.innerHTML = html;
+  if (!res.ok) return;
+  el.innerHTML = await res.text();
 }
 
 document.addEventListener("DOMContentLoaded", async () => {
   await includeHTML("#site-header", "/header.html");
   await includeHTML("#site-footer", "/footer.html");
-
 });
