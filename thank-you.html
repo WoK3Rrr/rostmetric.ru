@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Заявка отправлена — РостМетрик</title>
+  <meta name="description" content="Спасибо! Мы получили вашу заявку и свяжемся в ближайшее время." />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Заявка отправлена — РостМетрик">
+  <meta property="og:description" content="Мы получили вашу заявку и свяжемся в ближайшее время.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://rostmetric.ru/thank-you.html">
+  <meta property="og:image" content="https://rostmetric.ru/assets/og-image.png">
+
+  <meta name="theme-color" content="#1D43AE">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: "#10B981",
+            secondary: "#1D43AE"
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+  </style>
+</head>
+
+<body class="bg-white text-gray-900 pt-24">
+
+<div id="site-header"></div>
+
+<section class="pt-28 pb-24 bg-gradient-to-b from-white to-gray-50 min-h-screen">
+  <div class="max-w-3xl mx-auto px-6 text-center">
+
+    <div class="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-primary/10 text-primary mb-6">
+      <!-- check icon -->
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" class="w-7 h-7">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+      </svg>
+    </div>
+
+    <h1 class="text-3xl md:text-4xl font-bold mb-4">
+      Спасибо! Заявка отправлена
+    </h1>
+
+    <p class="text-gray-600 max-w-xl mx-auto mb-10">
+      Мы получили ваши данные. Обычно отвечаем в течение рабочего дня.
+      Если вопрос срочный — напишите в Telegram.
+    </p>
+
+    <div class="flex flex-col sm:flex-row gap-3 justify-center">
+      <a href="index.html"
+         class="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-white border border-gray-200 font-semibold hover:shadow-sm transition">
+        На главную
+      </a>
+
+      <a href="contacts.html"
+         class="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-secondary text-white font-semibold hover:opacity-90 transition">
+        Контакты
+      </a>
+    </div>
+
+    <p class="text-sm text-gray-500 mt-10">
+      Пока вы ждёте ответ — можете посмотреть, как устроен процесс работы.
+    </p>
+    <a href="kak-prohodit-rabota.html" class="text-sm font-semibold text-secondary hover:underline">
+      Читать про процесс →
+    </a>
+
+  </div>
+</section>
+
+<div id="site-footer"></div>
+
+<script src="includes.js"></script>
+</body>
+</html>
