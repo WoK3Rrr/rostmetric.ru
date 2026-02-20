@@ -1,21 +1,77 @@
-<!-- Header -->
-<header class="fixed top-0 left-0 right-0 z-50 w-full border-b border-gray-100 bg-white/80 backdrop-blur shadow-sm">
-  <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-    <a href="index.html">
-      <img src="/assets/logo.svg" alt="Logo" class="h-11 md:h-12 object-contain">
+<header class="sticky top-0 z-50 w-full border-b border-gray-100 bg-white/80 backdrop-blur shadow-sm">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between gap-3">
+
+    <!-- Logo -->
+    <a href="/index.html" class="flex items-center min-w-0">
+      <img src="/assets/logo.svg" alt="РостМетрик" class="h-10 md:h-12 w-auto shrink-0 object-contain">
     </a>
 
-    <nav class="hidden md:flex gap-8 text-sm font-medium text-gray-600">
-      <a href="index.html#services" class="hover:text-secondary transition">Ценность</a>
-      <a href="index.html#process" class="hover:text-secondary transition">Процесс</a>
-      <a href="index.html#about" class="hover:text-secondary transition">О проекте</a>
-      <a href="contacts.html" class="hover:text-secondary transition">Контакты</a>
+    <!-- Desktop nav -->
+    <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-600">
+      <a href="/index.html#services" class="hover:text-secondary transition">Ценность</a>
+      <a href="/index.html#process" class="hover:text-secondary transition">Процесс</a>
+      <a href="/index.html#about" class="hover:text-secondary transition">О проекте</a>
+      <a href="/contacts.html" class="hover:text-secondary transition">Контакты</a>
+      <a href="/privacy.html" class="hover:text-secondary transition">Политика</a>
     </nav>
 
-    <a href="form.html" class="bg-primary text-white px-5 py-2 rounded-lg text-sm font-medium hover:opacity-90 transition">
-      Обсудить проект
-    </a>
+    <!-- Right side -->
+    <div class="flex items-center gap-2">
+
+      <!-- CTA (desktop) -->
+      <a href="/form.html"
+         class="hidden sm:inline-flex bg-primary text-white px-5 py-2 rounded-lg text-sm font-medium hover:opacity-90 transition">
+        Обсудить проект
+      </a>
+
+      <!-- Mobile burger -->
+      <button id="menuBtn"
+              class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg border border-gray-200 bg-white hover:shadow-sm transition"
+              aria-label="Открыть меню"
+              aria-expanded="false">
+        <!-- bars icon -->
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" class="w-5 h-5 text-gray-700">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5" />
+        </svg>
+      </button>
+    </div>
   </div>
 
-</header>
+  <!-- Mobile menu panel -->
+  <div id="mobileMenu" class="md:hidden hidden border-t border-gray-100 bg-white/95 backdrop-blur">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-4 flex flex-col gap-3 text-sm font-medium text-gray-700">
+      <a href="/index.html#services" class="py-2 hover:text-secondary transition">Ценность</a>
+      <a href="/index.html#process" class="py-2 hover:text-secondary transition">Процесс</a>
+      <a href="/index.html#about" class="py-2 hover:text-secondary transition">О проекте</a>
+      <a href="/contacts.html" class="py-2 hover:text-secondary transition">Контакты</a>
+      <a href="/privacy.html" class="py-2 hover:text-secondary transition">Политика</a>
 
+      <a href="/form.html"
+         class="mt-2 inline-flex items-center justify-center bg-primary text-white px-5 py-3 rounded-lg font-semibold hover:opacity-90 transition">
+        Обсудить проект
+      </a>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      const btn = document.getElementById("menuBtn");
+      const menu = document.getElementById("mobileMenu");
+      if (!btn || !menu) return;
+
+      btn.addEventListener("click", () => {
+        const isOpen = !menu.classList.contains("hidden");
+        menu.classList.toggle("hidden");
+        btn.setAttribute("aria-expanded", String(!isOpen));
+      });
+
+      // закрываем меню при клике по ссылке
+      menu.addEventListener("click", (e) => {
+        const a = e.target.closest("a");
+        if (!a) return;
+        menu.classList.add("hidden");
+        btn.setAttribute("aria-expanded", "false");
+      });
+    })();
+  </script>
+</header>
